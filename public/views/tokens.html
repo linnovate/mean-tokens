@@ -1,0 +1,19 @@
+<div class="mean-token" data-ng-init="meanTokenEdit=false">
+	<div data-ng-show="!meanTokenEdit || !global.meanTokenEditableMode" data-ng-mouseover="meanTokenEdit=true" data-ng-class="{editable: global.meanTokenEditableMode}">{{global.tokens[meanToken].content[lang]}}</div>
+	<div style="" data-ng-show="meanTokenEdit && global.meanTokenEditableMode" data-ng-mouseout="save(); meanTokenEdit=false" data-ng-mouseover="meanTokenEdit=true">
+		<input type="text" ng-model="global.tokens[meanToken].content[lang]"/>
+		<!-- <select data-ng-show="!l" data-ng-mouseover="meanTokenEdit=true" ng-model="lang" ng-options="l for l in global.langs"></select> -->
+	</div>
+
+	<style type="text/css">
+		.editable {
+			min-width: 100px;
+			min-height: 100px;
+			border: dashed green 1px;
+		}
+
+		.form-control {
+			height: 100%;
+		}
+	</style>
+</div>
