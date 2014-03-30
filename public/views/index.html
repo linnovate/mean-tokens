@@ -5,11 +5,12 @@
 			<input type="text" class="span2" data-ng-model="title" placeholder="Title" autofocus />
 			<input type="text" class="span2" data-ng-model="content" placeholder="Content" autofocus />
 			<input type="text" class="span2" data-ng-model="categories" placeholder="Categories" autofocus />
-
-	        <!-- <div mean-token="title"></div> -->
 		 	<input type="submit" class="btn span1" value="SAVE"/>
 		</div>
 	</form>
+	<div class="alert alert-success">Any view that contains the mean-token directive is editable by toggling the edit mode above.</div>
+	<div class="alert alert-success">Put - mean-token="'default-value'" in your view to edit</div>
+	<div mean-token="'default-value'"></div>
 	<div class="loader" data-ng-init="init()" data-ng-hide="isEmpty()"></div>
 	<div class="actions-bar" data-ng-show="!isEmpty()">
 		<input type="button" class="btn btn-danger" data-ng-hide="global.meanTokenEditableMode" data-ng-click="global.meanTokenEditableMode=!global.meanTokenEditableMode"  value="Edit">
