@@ -47,11 +47,9 @@ angular.module('mean.system').directive('meanToken', ['Global', 'Tokens',
 								title: scope.meanToken,
 								content: content
 							});
-							if (scope.global.user && scope.global.user.role === 'admin') {
-								token.$save(function(token) {
-									scope.global.tokens[token.title] = token;
-								});
-							}
+							token.$save(function(token) {
+								scope.global.tokens[token.title] = token;
+							});
 						}
 					}
 				});
