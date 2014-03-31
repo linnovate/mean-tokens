@@ -9,7 +9,7 @@ angular.module('mean.system').directive('meanToken', ['Global', 'Tokens',
 				meanToken: '=',
 				l: '='
 			},
-			replace: true,
+			replace: false,
 			link: function(scope, elem, attrs) {
 				scope.global = Global;
 				if (!scope.global.lang)
