@@ -17,8 +17,8 @@ var TokenSchema = new Schema({
     },
     title: {
         type: String,
-        default: '',
-        trim: true
+        trim: true,
+        unique: true
     },
     content: {
         type: Object,

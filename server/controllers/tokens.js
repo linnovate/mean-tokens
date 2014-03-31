@@ -26,16 +26,23 @@ exports.token = function(req, res, next, id) {
  * Create a token
  */
 exports.create = function(req, res) {
-    var token = new Token(req.body);
+    var title = req.body.title;
+    Token.search(title, function(err, eToken) {
+        if (!eToken) {
+            var token = new Token(req.body);
 
-    token.save(function(err) {
-        if (err) {
-            return res.send('users/signup', {
-                errors: err.errors,
-                token: token
+            token.save(function(err) {
+                console.log(err)
+                console.log(token)
+                if (err) {
+                    return res.send('users/signup', {
+                        errors: err.errors,
+                        token: token
+                    });
+                } else {
+                    res.jsonp(token);
+                }
             });
-        } else {
-            res.jsonp(token);
         }
     });
 };
