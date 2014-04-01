@@ -1,7 +1,7 @@
 {
   "name": "mean-tokens",
-  "description": "MEAN Tokens editable content",
-  "version": "0.0.2",
+  "description": "MEAN - A Modern Stack: Tokens editable",
+  "version": "0.0.1",
   "private": false,
   "mean": true,
   "author": {
@@ -18,7 +18,7 @@
   },
   "readme": "ERROR: No README data found!",
   "homepage": "",
-  "_id": "mean-tokens@0.0.2",
+  "_id": "mean-tokens@0.0.1",
   "dist": {
     "shasum": "c938eeaa657b56172a8562c26483ca92c3f15c16"
   },
