@@ -32,8 +32,6 @@ exports.create = function(req, res) {
             var token = new Token(req.body);
 
             token.save(function(err) {
-                console.log(err)
-                console.log(token)
                 if (err) {
                     return res.send('users/signup', {
                         errors: err.errors,
