@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/linnovate/mean-tokens.git"
   },
   "dependencies": {},
   "engines": {
