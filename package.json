@@ -1,7 +1,7 @@
 {
   "name": "mean-tokens",
   "description": "MEAN - A Modern Stack: Tokens editable",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "mean": true,
   "author": {
@@ -17,11 +17,14 @@
     "npm": "1.3.x"
   },
   "readme": "ERROR: No README data found!",
-  "homepage": "",
-  "_id": "mean-tokens@0.0.1",
+  "homepage": "https://github.com/linnovate/mean-tokens",
+  "_id": "mean-tokens@0.0.2",
   "dist": {
-    "shasum": "c938eeaa657b56172a8562c26483ca92c3f15c16"
+    "shasum": "07b7db6db51b100050bfdcc835600ff850c813a4"
   },
   "_from": "https://github.com/linnovate/mean-tokens/tarball/master",
-  "_resolved": "https://github.com/linnovate/mean-tokens/tarball/master"
+  "_resolved": "https://github.com/linnovate/mean-tokens/tarball/master",
+  "bugs": {
+    "url": "https://github.com/linnovate/mean-tokens/issues"
+  }
 }

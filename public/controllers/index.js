@@ -7,7 +7,14 @@ angular.module('mean').controller('TokensController', ['$scope', 'Global', 'Toke
 		$scope.create = function() {
 			if (this.title) {
 				var content = {};
-				content[$scope.global.lang] = this.content;
+				if (typeof(this.content) === 'object') {
+					content = this.content;
+					this.content = {};
+				} else {
+					content[$scope.global.lang] = this.content;
+					this.content = '';
+				}
+
 				var categories = this.categories ? this.categories.split(',') : [];
 				var token = new Tokens({
 					title: this.title,
@@ -20,7 +27,6 @@ angular.module('mean').controller('TokensController', ['$scope', 'Global', 'Toke
 				});
 
 				this.title = '';
-				this.content = '';
 				this.categories = '';
 			}
 		};
@@ -48,7 +54,7 @@ angular.module('mean').controller('TokensController', ['$scope', 'Global', 'Toke
 			$scope.sort = 'title';
 			$scope.reverse = true;
 			if (!$scope.global.langs)
-				$scope.global.langs = ['en'];
+				$scope.global.langs = [{"identifier":"en"}];
 			if (!$scope.global.lang)
 				$scope.global.lang = 'en';
 
