@@ -28,20 +28,22 @@ exports.token = function(req, res, next, id) {
 exports.create = function(req, res) {
     var title = req.body.title;
     Token.search(title, function(err, eToken) {
-        if (!eToken) {
-            var token = new Token(req.body);
 
-            token.save(function(err) {
-                if (err) {
-                    return res.send('users/signup', {
-                        errors: err.errors,
-                        token: token
-                    });
-                } else {
-                    res.jsonp(token);
-                }
-            });
-        }
+        if (eToken) return res.jsonp(eToken);
+
+        var token = new Token(req.body);
+
+        token.save(function(err) {
+            if (err) {
+                return res.send('users/signup', {
+                    errors: err.errors,
+                    token: token
+                });
+            } else {
+                res.jsonp(token);
+            }
+        });
+
     });
 };
 

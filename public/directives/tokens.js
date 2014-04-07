@@ -39,7 +39,6 @@ angular.module('mean.system').directive('meanToken', ['Global', 'Tokens',
 				});
 
 				scope.$watch('meanToken', function() {
-					console.log('---42')
 					if (scope.meanToken) {
 						if (!scope.global.tokens[scope.meanToken]) {
 							var content = {};
@@ -57,7 +56,6 @@ angular.module('mean.system').directive('meanToken', ['Global', 'Tokens',
 
 				scope.save = function() {
 					if (scope.meanToken) {
-						console.log('---60')
 						var token = scope.global.tokens[scope.meanToken];
 						if (token) {
 							if (!token.updated) {
