@@ -41,14 +41,22 @@ angular.module('mean.system').directive('meanToken', ['Global', 'Tokens',
 				scope.$watch('meanToken', function() {
 					if (scope.meanToken) {
 						if (!scope.global.tokens[scope.meanToken]) {
-							var content = {};
-							content[scope.lang] = scope.meanToken;
-							var token = new Tokens({
-								title: scope.meanToken,
-								content: content
-							});
-							token.$save(function(token) {
-								scope.global.tokens[token.title] = token;
+							Tokens.get({
+								title: scope.meanToken
+							}, function(token) {
+								if (token.content) {
+									scope.global.tokens[token.title] = token;
+								} else {
+									var content = {};
+									content[scope.lang] = scope.meanToken;
+									var token = new Tokens({
+										title: scope.meanToken,
+										content: content
+									});
+									token.$save(function(token) {
+										scope.global.tokens[token.title] = token;
+									});
+								}
 							});
 						}
 					}
