@@ -1,7 +1,7 @@
 {
   "name": "mean-tokens",
   "description": "MEAN - A Modern Stack: Tokens editable",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "mean": true,
   "author": {
