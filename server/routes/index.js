@@ -9,13 +9,13 @@ module.exports = function(Tokens, app, auth) {
     app.post('/tokens', auth.requiresAdmin, tokens.create);
     app.get('/tokens/id/:tokenId', tokens.show);
     app.put('/tokens/id/:tokenId', auth.requiresAdmin, tokens.update);
-    app.del('/tokens/id/:tokenId', auth.requiresAdmin, tokens.destroy);
+    app.delete('/tokens/id/:tokenId', auth.requiresAdmin, tokens.destroy);
     
     app.get('/tokens/title', tokens.all);
     app.post('/tokens/title/:title', auth.requiresAdmin, tokens.create);
     app.get('/tokens/title/:title', tokens.search);
     app.put('/tokens/title/:title', auth.requiresAdmin, tokens.updateByTitle);
-    app.del('/tokens/title/:title', auth.requiresAdmin, tokens.destroyByTitle);
+    app.delete('/tokens/title/:title', auth.requiresAdmin, tokens.destroyByTitle);
     
     app.get('/tokens/category', tokens.all);
     app.post('/tokens/category/:category', auth.requiresAdmin, tokens.create);
