@@ -11,6 +11,8 @@ Tokens.register(function(app, auth, database) {
 		link: 'all tokens',
 		roles: ['admin'],
 		menu: 'main'
-	})
+	});
+
+	Tokens.aggregateAsset('css', 'tokens.css');
 
 })

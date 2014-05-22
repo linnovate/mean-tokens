@@ -1,13 +1,13 @@
 <section data-ng-controller="TokensController"; data-ng-init="t={}">
 	<h1> Token Administration </h1>
 	<div class="alert alert-success clearfix">Any view that contains the mean-token directive is editable by toggling the edit mode above.</div>
-	<tabset>
+	<tabset class="tokensTabset">
 	    <tab heading="List Tokens">
 			<div class="loader" data-ng-init="init()" data-ng-hide="isEmpty()"></div>
 			<br/>
 			<span>Search Tokens:</span>
-			<input type="text" class="span2" data-ng-model="filerCategory" placeholder="Categories" autofocus />
-			<input type="text" class="span2" data-ng-model="filerTitle" placeholder="Title" />
+			<input type="text" class="span2" data-ng-model="filerTitle" placeholder="Title" autofocus/>
+			<input type="text" class="span2" data-ng-model="filerCategory" placeholder="Categories" />
 			<div class="pull-right actions-bar" data-ng-show="!isEmpty()">
 				<span>Tokens:</span>
 				<input type="button" class="btn btn-info" data-ng-hide="global.meanTokenEditableMode" data-ng-click="global.meanTokenEditableMode=!global.meanTokenEditableMode"  value="Edit">
