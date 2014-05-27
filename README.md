@@ -35,6 +35,6 @@ See http://mean.io for more indepth information about mean.
     
   Once you have a user assign the user the admin role:
   
-    $ mean userAddRole <email> <role>
+    $ mean user <email> -a <role>
     
   
