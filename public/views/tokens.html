@@ -1,4 +1,4 @@
 <div data-ng-init="meanTokenEdit=false">
-	<div data-ng-show="!meanTokenEdit || !global.meanTokenEditableMode" data-ng-mouseover="meanTokenEdit=true" data-ng-class="{editable: global.meanTokenEditableMode}">{{global.tokens[meanToken].content[lang]}}</div>
+	<div data-ng-show="!meanTokenEdit || !global.meanTokenEditableMode" data-ng-mouseover="meanTokenEdit=true" data-ng-class="{editable: global.meanTokenEditableMode}">{{global.tokens[meanToken].content[lang] ? global.tokens[meanToken].content[lang] : global.tokens[meanToken].content[global.defaultLanguage.identifier]}}</div>
 	<input type="text" ng-model="global.tokens[meanToken].content[lang]" data-ng-show="meanTokenEdit && global.meanTokenEditableMode" data-ng-blur="save(); meanTokenEdit=false" data-ng-mouseover="meanTokenEdit=true"/>
 </div>
