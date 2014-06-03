@@ -10,14 +10,3 @@ angular.module('mean.system').factory('Tokens', ['$resource', function($resource
         }
     });
 }]);
-
-//Tokens service used for tokens REST endpoint
-angular.module('mean.system').factory('TokensByCategory', ['$resource', function($resource) {
-    return $resource('tokens/category/:category', {
-        title: '@category'
-    }, {
-        update: {
-            method: 'PUT'
-        }
-    });
-}]);
