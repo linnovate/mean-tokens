@@ -15,12 +15,15 @@ angular.module('mean.system').directive('meanToken', ['Global', 'Tokens',
 				if (!scope.global.lang)
 					scope.global.lang = 'en';
 				if (!scope.global.langs)
-					scope.global.langs = [{"identifier":"en"}];
+					scope.global.langs = [{
+						"identifier": "en"
+					}];
 
 				if (!scope.global.tokens) {
 					scope.global.tokens = {};
 					var token = {};
 					Tokens.query(function(tokens) {
+						scope.tokens = tokens;
 						for (var i = 0; i < tokens.length; i++) {
 							token = tokens[i];
 							scope.global.tokens[token.title] = token;
@@ -39,7 +42,7 @@ angular.module('mean.system').directive('meanToken', ['Global', 'Tokens',
 				});
 
 				scope.$watch('meanToken', function() {
-					if (scope.meanToken) {
+					if (scope.meanToken && scope.global.tokens && scope.tokens && Object.keys(scope.global.tokens).length === scope.tokens.length) {
 						if (!scope.global.tokens[scope.meanToken]) {
 							Tokens.get({
 								title: scope.meanToken
