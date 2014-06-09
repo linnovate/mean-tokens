@@ -42,7 +42,7 @@ angular.module('mean.system').directive('meanToken', ['Global', 'Tokens',
 				});
 
 				scope.$watch('meanToken', function() {
-					if (scope.meanToken && scope.global.tokens && scope.tokens && Object.keys(scope.global.tokens).length === scope.tokens.length) {
+					if (scope.meanToken) {
 						if (!scope.global.tokens[scope.meanToken]) {
 							Tokens.get({
 								title: scope.meanToken
