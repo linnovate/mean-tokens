@@ -41,8 +41,8 @@ angular.module('mean.system').directive('meanToken', ['Global', 'Tokens',
 						scope.lang = scope.global.lang;
 				});
 
-				scope.$watch('meanToken', function() {
-					if (scope.meanToken && scope.global.tokens && scope.tokens && Object.keys(scope.global.tokens).length === scope.tokens.length) {
+				scope.findOrCreate = function() {
+					if (scope.meanToken) {
 						if (!scope.global.tokens[scope.meanToken]) {
 							Tokens.get({
 								title: scope.meanToken
@@ -63,7 +63,7 @@ angular.module('mean.system').directive('meanToken', ['Global', 'Tokens',
 							});
 						}
 					}
-				});
+				};
 
 				scope.save = function() {
 					if (scope.meanToken) {
