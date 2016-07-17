@@ -5,11 +5,10 @@ Mean Tokens is a small addon package for mean.io that enables inline editing of 
 
 The package makes use of the role system within mean to control who is able to edit tokens. Currently only "admin" has the required permissions to edit tokens.
 
-# Annoucement
+FULL Documentation to be included in version 0.3.2 of the http://mean.io project.
 
-This **package is now obsolete**. The new package which is actively being developed is at https://git.mean.io/linnovate/mean-tokens.
 
-As new code is no longer being pushed on this repo, it is unlikely that issues will be tracked here effectively. So the new alternative should be used as soon as possible as issues will be acitvely tracked and fixed on git.mean.io for all mean-packages. 
+See http://mean.io for more indepth information about mean.
 
 
 ## Basic Usage
@@ -26,9 +25,9 @@ As new code is no longer being pushed on this repo, it is unlikely that issues w
 
     $ cd <NameOfYourApp> && npm install
     
-  Install mean-tokens:
+  Install tokens:
 
-    $ mean install mean-tokens
+    $ mean install tokens
 
   Run your app:
 

@@ -4,16 +4,16 @@
  * Module dependencies.
  */
 
-require('../models/token');
+ require('../models/token');
 
-var mongoose = require('mongoose'),
-    Token = mongoose.model('Token'),
-    _ = require('lodash');
+ var mongoose = require('mongoose'),
+ Token = mongoose.model('Token'),
+ _ = require('lodash');
 
 /**
  * Find token by id
  */
-exports.token = function(req, res, next, id) {
+ exports.token = function(req, res, next, id) {
     Token.load(id, function(err, token) {
         if (err) return next(err);
         if (!token) return next(new Error('Failed to load token ' + id));
@@ -25,7 +25,7 @@ exports.token = function(req, res, next, id) {
 /**
  * Create a token
  */
-exports.create = function(req, res) {
+ exports.create = function(req, res) {
     var title = req.body.title;
     Token.search(title, function(err, eToken) {
 
@@ -50,7 +50,7 @@ exports.create = function(req, res) {
 /**
  * Update a token
  */
-exports.update = function(req, res) {
+ exports.update = function(req, res) {
     var token = req.token;
 
     token = _.extend(token, req.body);
@@ -70,7 +70,7 @@ exports.update = function(req, res) {
 /**
  * Update a token by title
  */
-exports.updateByTitle = function(req, res) {
+ exports.updateByTitle = function(req, res) {
     var title = req.params.title;
     Token.search(title, function(err, token) {
         if (err) {
@@ -102,14 +102,14 @@ exports.updateByTitle = function(req, res) {
 /**
  * Update a token by title
  */
-exports.updateByCategory = function(req, res) {
+ exports.updateByCategory = function(req, res) {
 
-};
+ };
 
 /**
  * Delete a token
  */
-exports.destroy = function(req, res) {
+ exports.destroy = function(req, res) {
     var token = req.token;
 
     token.remove(function(err) {
@@ -127,14 +127,14 @@ exports.destroy = function(req, res) {
 /**
  * Show a token
  */
-exports.show = function(req, res) {
+ exports.show = function(req, res) {
     res.jsonp(req.token);
 };
 
 /**
  * Find token by title
  */
-exports.search = function(req, res) {
+ exports.search = function(req, res) {
     var title = req.params.title;
     Token.search(title, function(err, token) {
         if (err) {
@@ -143,21 +143,17 @@ exports.search = function(req, res) {
             });
         }
         if (!token) {
-            res.send('Didn\'t find token: ' + title, {
-                title: title,
-                message: 'Token does not exist',
-                status: 500
-            });
-        } else {
-            res.jsonp(token);
-        }
-    });
+         res.status(500).send('Didn\'t find token: ' + title);
+     } else {
+        res.jsonp(token);
+    }
+});
 };
 
 /**
  * Delete a token by title
  */
-exports.destroyByTitle = function(req, res) {
+ exports.destroyByTitle = function(req, res) {
     var title = req.params.title;
 
     Token.search(title, function(err, token) {
@@ -192,7 +188,7 @@ exports.destroyByTitle = function(req, res) {
 /**
  * List of Tokens
  */
-exports.all = function(req, res) {
+ exports.all = function(req, res) {
     var query = {};
     if (req.params.category) {
         query.categories = {

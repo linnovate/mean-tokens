@@ -1,10 +1,10 @@
 'use strict';
 
 var Module = require('meanio').Module;
-var Tokens = new Module('mean-tokens');
+var Tokens = new Module('tokens');
 
-Tokens.register(function(app, auth, database) {
-	Tokens.routes(app, auth, database);
+Tokens.register(function(app, auth, database, circles) {
+	Tokens.routes(app, auth, database, circles);
 
 	Tokens.menus.add({
 		title: 'Token Administration',
@@ -13,6 +13,5 @@ Tokens.register(function(app, auth, database) {
 		menu: 'main'
 	});
 
-	Tokens.aggregateAsset('css', 'tokens.css');
 
-})
+});

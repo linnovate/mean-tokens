@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('mean').controller('TokensController', ['$scope', 'Global', 'Tokens',
+angular.module('mean.system').controller('TokensController', ['$scope', 'Global', 'Tokens',
 	function($scope, Global, Tokens) {
 		$scope.global = Global;
 

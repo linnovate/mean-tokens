@@ -1,7 +1,7 @@
 'use strict';
 
 //Setting up route
-angular.module('mean').config(['$stateProvider', '$urlRouterProvider',
+angular.module('mean.system').config(['$stateProvider', '$urlRouterProvider',
 	function($stateProvider, $urlRouterProvider) {
 
 		//================================================
@@ -65,7 +65,7 @@ angular.module('mean').config(['$stateProvider', '$urlRouterProvider',
 		$stateProvider
 			.state('all tokens', {
 				url: '/admin/tokens',
-				templateUrl: 'mean-tokens/views/index.html',
+				templateUrl: 'tokens/views/index.html',
 				resolve: {
 					loggedin: checkLoggedin
 				}
